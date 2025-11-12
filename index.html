@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postura - Smart Posture Prevention Solution</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    
+
+
+    <style>
+    /* Font Utilities */
+    .font-playfair {
+        font-family: 'Playfair Display', serif;
+    }
+    .font-inter {
+        font-family: 'Inter', sans-serif;
+    }
+    /* Color Utilities */
+    .gradient-bg {
+        background-color: #8dd9cc;
+    }
+    .gradient-text {
+        color: #8dd9cc;
+    }
+    /* Card Hover Effect */
+    .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    /* Pulse Animation */
+    .pulse-animation {
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+    }
+
+    /* --- IMPLEMENTATION OF NEW IDEAS --- */
+
+    /* 1. Continuous Background Effect */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background-image: url('images/Product2.jpeg');
+        background-size: cover;
+        background-position: center;
+        /* Adds a subtle blur to the master background for depth */
+        filter: blur(4px);
+    }
+    
+    /* 2. Header Scroll Effect */
+    header {
+        position: fixed;
+        transition: background-color 0.3s ease;
+    }
+    .header-scrolled {
+        background-color: rgba(10, 10, 10, 0.7);
+        backdrop-filter: blur(10px);
+    }
+
+    /* 3. Hero Scrollytelling Section */
+    #hero-story-section {
+        /* A tall container to allow for a scroll-based animation sequence */
+        height: 300vh;
+    }
+    .hero-sticky-container {
+        height: 100vh;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+    }
+</style>
+
+<style>
+  /* Glow effect on hover */
+  .btn-glow:hover {
+    /* cyan-blue glow around the button */
+    box-shadow: 0 0 8px 2px rgba(16, 185, 252, 0.7);
+  }
+</style>
+
+
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="fixed top-0 left-0 w-full z-20">
+        <nav class="container mx-auto flex items-center justify-between px-6 py-4">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/0 (1).jpg" alt="Postura Logo" class="h-8 w-auto">
+                <span class="text-2xl font-bold text-white">Postura</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="features.html" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">How it Works</a>
+                <a href="#app" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">App</a>
+                <a href="team.html" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">Team</a>
+                <a href="#contact" class="bg-white text-gray-800 px-6 py-2 rounded-full font-semibold hover:bg-[#8dd9cc] hover:text-blue-500 transition-all duration-300">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    
+
+    <section id="hero-story-section" class="relative">
+        <div class="hero-sticky-container">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div id="hero-tagline" class="absolute botom-0 left-0 w-full h-full flex items-end justify-start px-12 pb-8 text-white">
+                <div>
+                    <p class="uppercase tracking-widest text-sm mb-4 opacity-80">Introducing</p>
+                    <h2 class="text-5xl md:text-5xl lg:text-7xl font-playfair font-light leading-tight">
+                        Your Work-Wellness <br>
+                        <span class="italic font-normal">Bestie!</span>
+                    </h2>
+                </div>
+            </div>
+            <div id="hero-details" class="absolute inset-0 w-full h-full text-white opacity-0">
+                <div class="relative container mx-auto px-6 h-full flex items-center">
+                    <div class="grid lg:grid-cols-2 gap-16 items-center w-full">
+                        <div>
+                            <p class="uppercase tracking-widest text-md mb-6 opacity-80">Why Postura</p>
+                            <h2 class="text-4xl md:text-5xl font-playfair font-light leading-tight mb-8">
+                                The Science Of Sitting
+                            </h2>
+                            <p class="text-xl font-inter leading-relaxed opacity-90">
+                                Years of unhealthy sitting habits can cause permanent changes in the muscles and tissues of the lower-back. 
+                            </p>
+                            <p class="text-xl font-inter leading-relaxed opacity-90 mt-10">
+                                But sometimes, simply sitting on a cushion can make all the difference.
+                            </p>
+                        </div>
+                        <div class="space-y-6 bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-8 max-w-lg mx-auto lg:mx-0">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0"></div>
+                                <div>
+                                    <p class="uppercase tracking-widest text-md mb-6 opacity-80">Advantages of Sitting on a Cushion</p>
+                                </div>
+
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-rocket text-white"></i></div>
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-2">Increase your productivity</h4>
+                                    <p class="opacity-80">Sit and work comfortably for hours.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-heart text-white"></i></div>
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-2">Breathe more freely</h4>
+                                    <p class="opacity-80">Allow your diaphragm to enable deeper, efficient breaths.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-shield-alt text-white"></i></div>
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-2">Strengthen back muscles</h4>
+                                    <p class="opacity-80">Empower your muscles to hold you upright- the way nature intended.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="benefits" class="relative py-24 bg-black/50 text-white">
+    <div class="relative container mx-auto px-6 text-center">
+
+        <div class="max-w-3xl mx-auto">
+            <p class="uppercase tracking-widest text-sm mb-6 opacity-80">The Postura Difference</p>
+            <h3 class="text-5xl font-playfair font-light leading-tight mb-8">
+                Engineered for Your Well-being
+            </h3>
+            <p class="text-xl opacity-90">
+                A smart, pressure-sensing cushion that can transform any chair into a posture coach.
+            </p>
+        </div>
+
+        <div class="my-16 flex justify-center">
+            <img src="images/Product7.jpg" alt="Postura smart cushion in a modern office" class="rounded-2xl shadow-lg w-full max-w-2xl">
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+    
+    <a href="features.html#tracking" class="block">
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 max-w-md transition-colors duration-300 hover:bg-opacity-20">
+            <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0 mb-4">
+                <i class="fas fa-signal text-white"></i>
+            </div>
+            <h4 class="text-lg font-semibold mb-1">Smart Posture Tracking</h4>
+            <p class="opacity-80">Track real-time pressure data from thighs and glutes.</p>
+        </div>
+    </a>
+
+    <a href="features.html#analysis" class="block">
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 max-w-md transition-colors duration-300 hover:bg-opacity-20">
+            <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0 mb-4">
+                <i class="fas fa-chart-line text-white"></i>
+            </div>
+            <h4 class="text-lg font-semibold mb-1">Advanced Analysis</h4>
+            <p class="opacity-80">ML-driven feedback to correct slouching.</p>
+        </div>
+    </a>
+
+    <a href="features.html#alerts" class="block">
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 max-w-md transition-colors duration-300 hover:bg-opacity-20">
+            <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0 mb-4">
+                <i class="fas fa-bell text-white"></i>
+            </div>
+            <h4 class="text-lg font-semibold mb-1">Timely Alerts</h4>
+            <p class="opacity-80">Stop pain before it starts with proactive posture alerts.</p>
+        </div>
+    </a>
+
+    <a href="features.html#comfort" class="block">
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 max-w-md transition-colors duration-300 hover:bg-opacity-20">
+            <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0 mb-4">
+                <i class="fas fa-feather text-white"></i>
+            </div>
+            <h4 class="text-lg font-semibold mb-1">Seamless Comfort</h4>
+            <p class="opacity-80">Designed for all-day comfort in any chair you use.</p>
+        </div>
+    </a>
+    
+</div>
+
+        
+    </div>
+</section>
+
+    
+
+    <section id="app" class="relative py-24 bg-black/50 text-white">
+        <div class="relative container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="font-playfair text-5xl md:text-5xl font-light mb-4">Companion App</h3>
+                <p class="font-inter text-lg opacity-80 max-w-2xl mx-auto">Insights, nudges, and control — always in sync.</p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-12 items-center">
+                <div class="space-y-8 text-right">
+    <div class="flex items-start flex-row-reverse space-x-reverse space-x-4">
+        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-chart-bar text-white text-sm"></i>
+        </span>
+        <div>
+            <h4 class="font-inter text-2xl font-semibold mb-1">Posture analytics</h4>
+            <p class="font-inter opacity-80">Generates daily score, trends, history at a glance.</p>
+        </div>
+    </div>
+    <div class="flex items-start flex-row-reverse space-x-reverse space-x-4">
+        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-bell text-white text-sm"></i>
+        </span>
+        <div>
+            <h4 class="font-inter text-2xl font-semibold mb-1">Smart nudges</h4>
+            <p class="font-inter opacity-80">Timely micro-breaks and posture reminders.</p>
+        </div>
+    </div>
+    <div class="flex items-start flex-row-reverse space-x-reverse space-x-4">
+        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-person-running text-white text-sm"></i>
+        </span>
+        <div>
+            <h4 class="font-inter text-2xl font-semibold mb-1">Guided exercises</h4>
+            <p class="font-inter opacity-80">A quick endorphin reset to refocus your day.</p>
+        </div>
+    </div>
+</div>
+                
+
+                <div class="relative mx-auto w-full max-w-xs">
+                    <div class="relative mx-auto w-full max-w-xs">
+            <div class="relative rounded-3xl border border-gray-200 shadow-xl overflow-hidden bg-white">
+                <div class="h-6 bg-gray-100"></div>
+                <div class="p-5 space-y-5">
+                <div class="flex items-center justify-between">
+                    <p class="font-inter text-sm text-gray-500">Today</p>
+                    <span class="font-inter text-sm text-[#8dd9cc]">+8%</span>
+                </div>
+
+                <div>
+                    <p class="font-inter text-xs text-gray-500 mb-1">Posture score</p>
+                    <div class="flex items-end space-x-2">
+                    <h4 class="font-inter text-gray-500 mb-1">86</h4>
+                    <span class="font-inter text-gray-500 mb-1">/ 100</span>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-inter text-xs text-gray-500 mb-2">Focus streak</p>
+                    <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-[#8dd9cc] w-3/4"></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="rounded-xl p-3 bg-gray-50 text-center">
+                    <p class="font-inter text-xs text-gray-500 mb-1">Alerts</p>
+                    <p class="font-inter font-semibold text-gray-900">3</p>
+                    </div>
+                    <div class="rounded-xl p-3 bg-gray-50 text-center">
+                    <p class="font-inter text-xs text-gray-500 mb-1">Breaks</p>
+                    <p class="font-inter font-semibold text-gray-900">4</p>
+                    </div>
+                    <div class="rounded-xl p-3 bg-gray-50 text-center">
+                    <p class="font-inter text-xs text-gray-500 mb-1">Good hrs</p>
+                    <p class="font-inter font-semibold text-gray-900">5</p>
+                    </div>
+                </div>
+                </div>
+                <div class="h-8 flex items-center justify-center">                </div>
+            </div>
+            </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0"><i class="fas fa-sliders-h text-white text-sm"></i></span>
+                        <div>
+                            <h4 class="font-inter text-2xl font-semibold mb-1">Productivity settings</h4>
+                            <p class="font-inter opacity-80"> Set work goals, pomodoro timers and more- your way.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0"><i class="fas fa-moon text-white text-sm"></i></span>
+                        <div>
+                            <h4 class="font-inter text-2xl font-semibold mb-1">Quiet hours</h4>
+                            <p class="font-inter opacity-80">Mute alerts during meetings or deep work.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0"><i class="fas fa-mobile-screen-button text-white text-sm"></i></span>
+                        <div>
+                            <h4 class="font-inter text-2xl font-semibold mb-1">Seamless sync</h4>
+                            <p class="font-inter opacity-80">Real-time sync with your cushion and phone.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="relative text-white bg-black/60">
+        <section id="contact" class="relative py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="max-w-lg">
+                        <h3 class="font-playfair text-4xl mb-4">Ready for pain-free sitting?</h3>
+                        <p class="font-inter text-lg mb-8 opacity-80">Join our waitlist and start your posture journey today.</p>
+                        <a href="https://forms.gle/Ntbozadym71u9FQM9" target="_blank" rel="noopener noreferrer" class="bg-white text-gray-800 px-7 py-3 rounded-full font-semibold hover:bg-[#8dd9cc] hover:text-blue-500 transition-all duration-300">
+                            <i class="fas fa-user-plus mr-2"></i>Join Waitlist
+                        </a>
+                    </div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-8 max-w-md">
+                        <h4 class="font-playfair text-2xl mb-4 text-white">Get in touch</h4>
+                        <p class="font-inter opacity-80 mb-2">Email us at</p>
+                        <p class="font-inter font-semibold mb-6">postura.cs@gmail.com</p>
+                        <p class="font-inter opacity-80 mb-4">Follow us</p>
+                        <div class="flex space-x-4">
+                            <a href="https://www.tiktok.com/@postura2025?_t=ZT-8zgTydOcy4r&_r=1" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition"><i class="fab fa-tiktok text-white"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition"><i class="fab fa-instagram text-white"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition"><i class="fab fa-linkedin text-white"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="relative py-10 opacity-80 flex flex-col items-center space-y-4">
+    <a href="#">
+        <img src="images/0 (1).jpg" alt="Postura Logo" class="h-8 w-auto">
+    </a>
+    <p class="font-inter">Better posture, healthier lifestyle.</p>
+</footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. HEADER SCROLL EFFECT
+    ScrollTrigger.create({
+        start: 'top -80',
+        end: 99999,
+        toggleClass: {
+            className: 'header-scrolled',
+            targets: 'header'
+        }
+    });
+
+    // 2. HERO STORY ANIMATION
+    const heroTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#hero-story-section",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+            pin: ".hero-sticky-container"
+        }
+    });
+
+    // Animate from tagline to details
+    heroTimeline
+        // Move the initial tagline up and fade it out
+        .to("#hero-tagline", { y: "-50%", opacity: 0, duration: 1 })
+        // Fade in the product details to take its place
+        .to("#hero-details", { opacity: 1, duration: 2 }, "-=0.5");
+
+
+    // 3. CONSISTENT REVEAL ANIMATIONS FOR ALL OTHER SECTIONS
+    // Target all major child elements within the other sections
+    const revealElements = gsap.utils.toArray("#benefits > div > *, #app > div > *, #contact > div > *");
+
+    revealElements.forEach((el) => {
+        gsap.from(el, {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: el,
+                start: "top 85%", // Start animation when element is 85% from the top
+                toggleActions: "play none none none" // Play the animation once
+            }
+        });
+    });
+
+    // Smooth scroll for nav links (your original code, which is good!)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+<!-- Tiny Round Sticky Button with Cyan Glow -->
+<a
+  href="https://forms.gle/Ntbozadym71u9FQM9"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Join Our Waitlist"
+  class="
+    fixed bottom-4 right-4 z-50
+    inline-flex items-center justify-center
+    px-6 py-2
+    bg-transparent text-white
+    border border-white
+    rounded-full
+    transition-all duration-200 ease-out
+    btn-glow hover:scale-105
+  "
+>
+  <span class="mr-2">Join Waitlist</span>
+    <i class="fas fa-user-plus text-white text-sm"></i>
+
+</a>
+
+
+
+
+</body>
+</html>
+
+
+
+

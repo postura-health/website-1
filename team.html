@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Postura</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* All the same styles from your main page for consistency */
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background-image: url('images/Product2.jpeg'); /* Same background */
+            background-size: cover;
+            background-position: center;
+            filter: blur(4px);
+        }
+        
+        header {
+            position: fixed;
+            transition: background-color 0.3s ease;
+        }
+        .header-scrolled {
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        /* New styles for the team card hover effect */
+        .team-card-image {
+            position: relative;
+            overflow: hidden;
+        }
+        .team-card-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .team-card-image:hover .team-card-overlay {
+            opacity: 1;
+        }
+        .team-social-icons a {
+            color: white;
+            margin: 0 0.75rem;
+            font-size: 1.25rem;
+            transition: transform 0.2s ease;
+        }
+        .team-social-icons a:hover {
+            transform: scale(1.2);
+            color: #8dd9cc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="fixed top-0 left-0 w-full z-20">
+        <nav class="container mx-auto flex items-center justify-between px-6 py-4">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="images/0 (1).jpg" alt="Postura Logo" class="h-8 w-auto">
+                <span class="text-2xl font-bold text-white">Postura</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#benefits" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">Why Postura</a>
+                <a href="index.html#app" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">App</a>
+                <a href="team.html" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">Team</a>
+                <a href="index.html#contact" class="bg-white text-gray-800 px-6 py-2 rounded-full font-semibold hover:bg-[#8dd9cc] hover:text-white transition-all duration-300">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="relative min-h-screen flex items-center justify-center text-white bg-black/50">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl md:text-7xl font-playfair font-light leading-tight">
+                    A Movement Towards <br> Mindful Sitting
+                </h1>
+                <p class="text-xl mt-6 max-w-3xl mx-auto opacity-80 font-inter">
+                    Postura was founded to provide an innovative solution for combating chronic back pain in working adults. 
+                </p>
+            </div>
+        </section>
+
+        <section class="relative py-24 bg-black/50 text-white">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="text-4xl md:text-5xl font-playfair font-light mb-6">Our Mission</h2>
+                <p class="text-xl font-inter leading-relaxed opacity-90">
+                    Using AI-Powered Hardware Technology to help people sit smarter, work better, and live healthier.
+                </p>
+            </div>
+        </section>
+
+        <section class="relative py-24 bg-black/50 text-white">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-playfair font-light mb-6">Why We Started</h2>
+                        <p class="text-lg font-inter leading-relaxed opacity-90 mb-4">
+                            Postura began with a simple observation - long hours of sitting were harming people's health and wellbeing. Our founder set out to change that.
+                        
+                        <p class="text-lg font-inter leading-relaxed opacity-90">
+                            The result: a smart cushion that encourages better posture and offers real-time feedback, helping users build healthier sitting habits over time. 
+                    </div>
+                    <div>
+                        <img src="images/Product6.jpg" alt="A sketch of the Postura cushion" class="rounded-3xl shadow-xl w-3/4 mx-auto opacity-100">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="relative py-24 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl md:text-5xl font-playfair font-light">Meet the Team</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    
+                    <div class="text-center">
+                        <div class="team-card-image mb-4 rounded-full w-48 h-48 mx-auto">
+                            <img src="images/Gayatri.jpg" alt="Team Member Name" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="text-2xl font-semibold">Gayatri Brijesh</h3>
+                        <p class="opacity-80 mb-3">Founder & CEO</p>
+                        <p class="text-sm font-inter opacity-70 max-w-xs mx-auto">
+                             "After seeing how poor sitting habits and modern work culture affected my loved ones, I was driven to build a solution that prioritises health first. Postura is my vision for a healthier future where technology empowers us to take better care of ourselves."
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="team-card-image mb-4 rounded-full w-48 h-48 mx-auto">
+                            <img src="images/Leanna.jpg" alt="Team Member Name" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="text-2xl font-semibold">Leanna Yumul</h3>
+                        <p class="opacity-80 mb-3">Co-Founder & COO</p>
+                        <p class="text-sm font-inter opacity-70 max-w-xs mx-auto">
+                            "I am passionate about creating innovative solutions that improve everyday life. Inspired by the impact of back pain of those close to me, I am committed to developing ways to alleviate discomfort and promote well being"
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="team-card-image mb-4 rounded-full w-48 h-48 mx-auto">
+                            <img src="images/Niru.jpg" alt="Team Member Name" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="text-2xl font-semibold">Niru Thirunarayanan</h3>
+                        <p class="opacity-80 mb-3">CMO & Research Lead</p>
+                        <p class="text-sm font-inter opacity-70 max-w-xs mx-auto">
+                            "I joined Postura help develop a solution that promotes posture through habit-building and AI technology. Excited to combine wellness, design, and real-world impact to improve something that people rarely consider!"
+                        </p>
+                    </div>
+                    <div class="lg:col-span-3 flex justify-evenly gap-24 flex-wrap">
+                    <div class="text-center">
+                        <div class="team-card-image mb-4 rounded-full w-40 h-40 mx-auto">
+                            <img src="images/Kyle.jpg" alt="Team Member Name" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="text-2xl font-semibold">Kyle Chen</h3>
+                        <p class="opacity-80 mb-3">Lead Hardware Engineer</p>
+                        <p class="text-sm font-inter opacity-70 max-w-xs mx-auto">
+                            "I joined Postura because of the impact...the project that we, Postura, are working on is to improve the health and ergonomics of the people which holds a special spot in my heart."
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="team-card-image mb-4 rounded-full w-40 h-40 mx-auto">
+                            <img src="images/Ariana.jpg" alt="Team Member Name" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="text-2xl font-semibold">Ariana Smith</h3>
+                        <p class="opacity-80 mb-3">Lead Data Scientist</p>
+                        <p class="text-sm font-inter opacity-70 max-w-xs mx-auto">
+                            "I joined Postura because of its novel approach to such a widespread problem. Not only did I want a product like this for myself, but was excited by the opportunity to make a meaningful impact through straightforward, accessible technology"
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="team-card-image mb-4 rounded-full w-40 h-40 mx-auto">
+                            <img src="images/Emely.jpg" alt="Team Member Name" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="text-2xl font-semibold">Emely Sokolovski</h3>
+                        <p class="opacity-80 mb-3">Medical Lead</p>
+                        <p class="text-sm font-inter opacity-70 max-w-xs mx-auto">
+                            "I joined Postura as a medical researcher to continue my passion for preventative care and contribute to making a product that can help a vast amount of individuals! "
+                        </p>
+                    </div>
+
+                </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer class="relative py-10 opacity-80 flex flex-col items-center space-y-4">
+    <a href="#">
+        <img src="images/0 (1).jpg" alt="Postura Logo" class="h-8 w-auto">
+    </a>
+    <p class="font-inter text-white">Better posture, healthier lifestyle.</p>
+</footer>
+
+
+    </main>
+
+    <a href="index.html" id="homeButton"
+        class="fixed bottom-6 right-6 border-2 border-[#8dd9cc] text-white w-12 h-12 rounded-full shadow-lg hover:bg-[#8dd9cc] hover:text-blue-500 transition duration-300 flex items-center justify-center">
+        <i class="fas fa-home"></i>
+        
+    </a>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Header scroll effect
+        ScrollTrigger.create({
+            start: 'top -80',
+            end: 99999,
+            toggleClass: {
+                className: 'header-scrolled',
+                targets: 'header'
+            }
+        });
+
+        // Cinematic transitions for all sections
+        const contentSections = gsap.utils.toArray("section");
+        contentSections.forEach((section) => {
+            const content = section.querySelector(".container");
+            if(content) {
+                gsap.from(content, {
+                    y: 100,
+                    opacity: 0,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 80%",
+                        end: "bottom 90%",
+                        scrub: 1.5,
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
