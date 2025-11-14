@@ -102,103 +102,74 @@
 
     <header class="fixed top-0 left-0 w-full z-20">
         <nav class="container mx-auto flex items-center justify-between px-6 py-4">
-            
             <a href="#" class="flex items-center space-x-2">
                 <img src="images/0 (1).jpg" alt="Postura Logo" class="h-8 w-auto">
                 <span class="text-2xl font-bold text-white">Postura</span>
             </a>
-
             <div class="hidden md:flex items-center space-x-8">
                 <a href="features.html" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">How it Works</a>
                 <a href="#app" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">App</a>
                 <a href="team.html" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">Team</a>
                 <a href="#contact" class="bg-white text-gray-800 px-6 py-2 rounded-full font-semibold hover:bg-[#8dd9cc] hover:text-blue-500 transition-all duration-300">Contact Us</a>
             </div>
-
-            <button id="open-menu" class="md:hidden text-white" aria-label="Open navigation menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
         </nav>
     </header>
 
-    <div id="mobile-menu" class="hidden fixed inset-0 w-full h-full bg-black bg-opacity-90 z-50">
-        <button id="close-menu" class="absolute top-6 right-6 text-white" aria-label="Close navigation menu">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-        
-        <nav class="flex flex-col items-center justify-center h-full space-y-8">
-            <a href="features.html" class="text-white text-2xl font-semibold">How it Works</a>
-            <a href="#app" class="text-white text-2xl font-semibold">App</a>
-            <a href="team.html" class="text-white text-2xl font-semibold">Team</a>
-            <a href="#contact" class="bg-white text-gray-800 px-8 py-3 rounded-full text-xl font-semibold">Contact Us</a>
-        </nav>
-    </div>
+    
 
-    ```
-
----
-
-### 2. The Responsive Hero Section
-
-For this section, the text size was too large and the padding was too wide for mobile screens. I've adjusted them to scale up with screen size.
-
-```html
     <section id="hero-story-section" class="relative">
         <div class="hero-sticky-container">
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-            
-            <div id="hero-tagline" class="absolute botom-0 left-0 w-full h-full flex items-end justify-start px-6 md:px-12 pb-8 text-white">
+            <div id="hero-tagline" class="absolute botom-0 left-0 w-full h-full flex items-end justify-start px-12 pb-8 text-white">
                 <div>
                     <p class="uppercase tracking-widest text-sm mb-4 opacity-80">Introducing</p>
-                    <h2 class="text-4xl sm:text-5xl lg:text-7xl font-playfair font-light leading-tight">
+                    <h2 class="text-5xl md:text-5xl lg:text-7xl font-playfair font-light leading-tight">
                         Your Work-Wellness <br>
                         <span class="italic font-normal">Bestie!</span>
                     </h2>
                 </div>
             </div>
-            
             <div id="hero-details" class="absolute inset-0 w-full h-full text-white opacity-0">
                 <div class="relative container mx-auto px-6 h-full flex items-center">
                     <div class="grid lg:grid-cols-2 gap-16 items-center w-full">
                         <div>
                             <p class="uppercase tracking-widest text-md mb-6 opacity-80">Why Postura</p>
-                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-playfair font-light leading-tight mb-8">
+                            <h2 class="text-4xl md:text-5xl font-playfair font-light leading-tight mb-8">
                                 The Science Of Sitting
                             </h2>
-                            <p class="text-lg md:text-xl font-inter leading-relaxed opacity-90">
+                            <p class="text-xl font-inter leading-relaxed opacity-90">
                                 Years of unhealthy sitting habits can cause permanent changes in the muscles and tissues of the lower-back. 
                             </p>
-                            <p class="text-lg md:text-xl font-inter leading-relaxed opacity-90 mt-10">
+                            <p class="text-xl font-inter leading-relaxed opacity-90 mt-10">
                                 But sometimes, simply sitting on a cushion can make all the difference.
                             </p>
                         </div>
-
-                        <div class="space-y-6 bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 lg:p-8 max-w-lg mx-auto lg:mx-0">
-                            
+                        <div class="space-y-6 bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-8 max-w-lg mx-auto lg:mx-0">
                             <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0">
-                                    </div>
-                                <h3 class="text-lg font-semibold uppercase tracking-wider">Advantages of Sitting on a Cushion</h3>
-                            </div>
+                                <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0"></div>
+                                <div>
+                                    <p class="uppercase tracking-widest text-md mb-6 opacity-80">Advantages of Sitting on a Cushion</p>
+                                </div>
 
+                            </div>
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-rocket text-white"></i></div>
                                 <div>
-                                    <h4 class="text-xl font-semibold mb-1">Increase your productivity</h4>
+                                    <h4 class="text-xl font-semibold mb-2">Increase your productivity</h4>
                                     <p class="opacity-80">Sit and work comfortably for hours.</p>
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-heart text-white"></i></div>
                                 <div>
-                                    <h4 class="text-xl font-semibold mb-1">Breathe more freely</h4>
+                                    <h4 class="text-xl font-semibold mb-2">Breathe more freely</h4>
                                     <p class="opacity-80">Allow your diaphragm to enable deeper, efficient breaths.</p>
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-shield-alt text-white"></i></div>
                                 <div>
-                                    <h4 class="text-xl font-semibold mb-1">Strengthen back muscles</h4>
+                                    <h4 class="text-xl font-semibold mb-2">Strengthen back muscles</h4>
                                     <p class="opacity-80">Empower your muscles to hold you upright- the way nature intended.</p>
                                 </div>
                             </div>
@@ -209,32 +180,16 @@ For this section, the text size was too large and the padding was too wide for m
         </div>
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const openBtn = document.getElementById('open-menu');
-            const closeBtn = document.getElementById('close-menu');
-            const menu = document.getElementById('mobile-menu');
-
-            openBtn.addEventListener('click', () => {
-                menu.classList.remove('hidden');
-            });
-
-            closeBtn.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
-    </script>
-
 
     <section id="benefits" class="relative py-24 bg-black/50 text-white">
     <div class="relative container mx-auto px-6 text-center">
 
         <div class="max-w-3xl mx-auto">
             <p class="uppercase tracking-widest text-sm mb-6 opacity-80">The Postura Difference</p>
-            <h3 class="text-3xl sm:text-4xl md:text-5xl font-playfair font-light leading-tight mb-8">
+            <h3 class="text-5xl font-playfair font-light leading-tight mb-8">
                 Engineered for Your Well-being
             </h3>
-            <p class="text-lg md:text-xl opacity-90">
+            <p class="text-xl opacity-90">
                 A smart, pressure-sensing cushion that can transform any chair into a posture coach.
             </p>
         </div>
@@ -246,7 +201,7 @@ For this section, the text size was too large and the padding was too wide for m
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
     
     <a href="features.html#tracking" class="block">
-        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 transition-colors duration-300 hover:bg-opacity-20">
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 max-w-md transition-colors duration-300 hover:bg-opacity-20">
             <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0 mb-4">
                 <i class="fas fa-signal text-white"></i>
             </div>
@@ -256,7 +211,7 @@ For this section, the text size was too large and the padding was too wide for m
     </a>
 
     <a href="features.html#analysis" class="block">
-        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 transition-colors duration-300 hover:bg-opacity-20">
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 max-w-md transition-colors duration-300 hover:bg-opacity-20">
             <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0 mb-4">
                 <i class="fas fa-chart-line text-white"></i>
             </div>
@@ -266,7 +221,7 @@ For this section, the text size was too large and the padding was too wide for m
     </a>
 
     <a href="features.html#alerts" class="block">
-        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 transition-colors duration-300 hover:bg-opacity-20">
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 max-w-md transition-colors duration-300 hover:bg-opacity-20">
             <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0 mb-4">
                 <i class="fas fa-bell text-white"></i>
             </div>
@@ -276,7 +231,7 @@ For this section, the text size was too large and the padding was too wide for m
     </a>
 
     <a href="features.html#comfort" class="block">
-        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 transition-colors duration-300 hover:bg-opacity-20">
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl p-6 max-w-md transition-colors duration-300 hover:bg-opacity-20">
             <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0 mb-4">
                 <i class="fas fa-feather text-white"></i>
             </div>
@@ -290,6 +245,116 @@ For this section, the text size was too large and the padding was too wide for m
         
     </div>
 </section>
+
+    
+
+    <section id="app" class="relative py-24 bg-black/50 text-white">
+        <div class="relative container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="font-playfair text-5xl md:text-5xl font-light mb-4">Companion App</h3>
+                <p class="font-inter text-lg opacity-80 max-w-2xl mx-auto">Insights, nudges, and control — always in sync.</p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-12 items-center">
+                <div class="space-y-8 text-right">
+    <div class="flex items-start flex-row-reverse space-x-reverse space-x-4">
+        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-chart-bar text-white text-sm"></i>
+        </span>
+        <div>
+            <h4 class="font-inter text-2xl font-semibold mb-1">Posture analytics</h4>
+            <p class="font-inter opacity-80">Generates daily score, trends, history at a glance.</p>
+        </div>
+    </div>
+    <div class="flex items-start flex-row-reverse space-x-reverse space-x-4">
+        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-bell text-white text-sm"></i>
+        </span>
+        <div>
+            <h4 class="font-inter text-2xl font-semibold mb-1">Smart nudges</h4>
+            <p class="font-inter opacity-80">Timely micro-breaks and posture reminders.</p>
+        </div>
+    </div>
+    <div class="flex items-start flex-row-reverse space-x-reverse space-x-4">
+        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-person-running text-white text-sm"></i>
+        </span>
+        <div>
+            <h4 class="font-inter text-2xl font-semibold mb-1">Guided exercises</h4>
+            <p class="font-inter opacity-80">A quick endorphin reset to refocus your day.</p>
+        </div>
+    </div>
+</div>
+                
+
+                <div class="relative mx-auto w-full max-w-xs">
+                    <div class="relative mx-auto w-full max-w-xs">
+            <div class="relative rounded-3xl border border-gray-200 shadow-xl overflow-hidden bg-white">
+                <div class="h-6 bg-gray-100"></div>
+                <div class="p-5 space-y-5">
+                <div class="flex items-center justify-between">
+                    <p class="font-inter text-sm text-gray-500">Today</p>
+                    <span class="font-inter text-sm text-[#8dd9cc]">+8%</span>
+                </div>
+
+                <div>
+                    <p class="font-inter text-xs text-gray-500 mb-1">Posture score</p>
+                    <div class="flex items-end space-x-2">
+                    <h4 class="font-inter text-gray-500 mb-1">86</h4>
+                    <span class="font-inter text-gray-500 mb-1">/ 100</span>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-inter text-xs text-gray-500 mb-2">Focus streak</p>
+                    <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-[#8dd9cc] w-3/4"></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="rounded-xl p-3 bg-gray-50 text-center">
+                    <p class="font-inter text-xs text-gray-500 mb-1">Alerts</p>
+                    <p class="font-inter font-semibold text-gray-900">3</p>
+                    </div>
+                    <div class="rounded-xl p-3 bg-gray-50 text-center">
+                    <p class="font-inter text-xs text-gray-500 mb-1">Breaks</p>
+                    <p class="font-inter font-semibold text-gray-900">4</p>
+                    </div>
+                    <div class="rounded-xl p-3 bg-gray-50 text-center">
+                    <p class="font-inter text-xs text-gray-500 mb-1">Good hrs</p>
+                    <p class="font-inter font-semibold text-gray-900">5</p>
+                    </div>
+                </div>
+                </div>
+                <div class="h-8 flex items-center justify-center">                </div>
+            </div>
+            </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0"><i class="fas fa-sliders-h text-white text-sm"></i></span>
+                        <div>
+                            <h4 class="font-inter text-2xl font-semibold mb-1">Productivity settings</h4>
+                            <p class="font-inter opacity-80"> Set work goals, pomodoro timers and more- your way.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0"><i class="fas fa-moon text-white text-sm"></i></span>
+                        <div>
+                            <h4 class="font-inter text-2xl font-semibold mb-1">Quiet hours</h4>
+                            <p class="font-inter opacity-80">Mute alerts during meetings or deep work.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="w-10 h-10 rounded-full bg-[#8dd9cc] flex items-center justify-center flex-shrink-0"><i class="fas fa-mobile-screen-button text-white text-sm"></i></span>
+                        <div>
+                            <h4 class="font-inter text-2xl font-semibold mb-1">Seamless sync</h4>
+                            <p class="font-inter opacity-80">Real-time sync with your cushion and phone.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="relative text-white bg-black/60">
         <section id="contact" class="relative py-20">
@@ -310,7 +375,7 @@ For this section, the text size was too large and the padding was too wide for m
                         <div class="flex space-x-4">
                             <a href="https://www.tiktok.com/@postura2025?_t=ZT-8zgTydOcy4r&_r=1" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition"><i class="fab fa-tiktok text-white"></i></a>
                             <a href="https://www.instagram.com/postura_health/" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition"><i class="fab fa-instagram text-white"></i></a>
-                            <a href="https://www.linkedin.com/company/postura-health/" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition"><i class="fab fa-linkedin text-white"></i></a>
+                            <a href="linkedin.com/company/postura-health/" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition"><i class="fab fa-linkedin text-white"></i></a>
                         </div>
                     </div>
                 </div>
