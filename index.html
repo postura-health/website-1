@@ -80,7 +80,7 @@
         height: 300vh;
     }
     .hero-sticky-container {
-        height: 100vh;
+        height: 100%;
         width: 100%;
         position: sticky;
         top: 0;
@@ -103,17 +103,30 @@
 
     <header class="fixed top-0 left-0 w-full z-20">
         <nav class="container mx-auto flex items-center justify-between px-6 py-4">
-            <a href="#" class="flex items-center space-x-2">
+            <a href="#" class="flex items-center space-x-2 z-30">
                 <img src="images/0 (1).jpg" alt="Postura Logo" class="h-8 w-auto">
                 <span class="text-2xl font-bold text-white">Postura</span>
             </a>
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden md:flex items-center space-x-8 z-30">
                 <a href="features.html" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">How it Works</a>
                 <a href="#app" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">App</a>
                 <a href="team.html" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">Team</a>
                 <a href="#contact" class="bg-white text-gray-800 px-6 py-2 rounded-full font-semibold hover:bg-[#8dd9cc] hover:text-blue-500 transition-all duration-300">Contact Us</a>
             </div>
+
+            <button id="menu-toggle" class="md:hidden text-white text-xl z-30">
+                <i class = "fas fa-bars"></i>
+            </button>
         </nav>
+
+        <div id ="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-black/95 backdrop-blur-md pt-20 pb-4 z-20">
+            <div class="flex flex-col items-center space-y-8 p-6">
+                <a href="features.html" class="text-white text-2xl font-semibold hover:text-[#8dd9cc] transition-colors" onclick="document.getElementById('mobile-menu').clasList.add('hidden')">How it Works</a>
+                <a href="#app" class="text-white text-2xl font-semibold hover:text-[#8dd9cc] transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">App</a>
+                <a href="team.html" class="text-white text-2xl font-semibold hover:text-[#8dd9cc] transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Team</a>
+                <a href="#contact" class="bg-white text-gray-800 px-8 py-3 rounded-full font-bold hover:bg-[#8dd9cc] hover:text-blue-500 transition-all duration-300" onclick="document.getElementByI('mobile-menu').classList.add('hidden')">Contact Us</a>
+            </div>
+        </div>
     </header>
 
     
@@ -394,6 +407,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <script>
+        // --- 4. Mobile Menu Toggle Logic ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        // Toggle the 'hidden' Tailwind class on the mobile menu container
+        mobileMenu.classList.toggle('hidden');
+
+        // Optional: Change the hamburger icon to an 'X' (close icon)
+        const icon = menuToggle.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        } else {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        }
+    });
+
+    // We also added `onclick` handlers to the mobile links to close the menu 
+    // when a user selects a destination.
     gsap.registerPlugin(ScrollTrigger);
 
     // 1. HEADER SCROLL EFFECT
