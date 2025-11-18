@@ -107,7 +107,7 @@
             </button>
         </nav>
 
-        <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-screen bg-black/95 backdrop-blur-xl pt-32 z-40 transition-all duration-300">
+        <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-screen bg-gray-900 z-[60] pt-32 transition-all duration-300">
             <div class="flex flex-col items-center space-y-10 p-6">
                 <a href="features.html" class="text-white text-3xl font-light hover:text-[#8dd9cc]" onclick="toggleMenu()">How it Works</a>
                 <a href="#app" class="text-white text-3xl font-light hover:text-[#8dd9cc]" onclick="toggleMenu()">App</a>
@@ -351,9 +351,13 @@
             if(mobileMenu.classList.contains('hidden')){
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+
+                document.body.style.overflow = 'auto';
             } else {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
+
+                document.body.style.overflow = 'hidden';
             }
         }
         menuToggle.addEventListener('click', toggleMenu);
