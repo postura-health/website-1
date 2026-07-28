@@ -117,12 +117,13 @@
         </div>
     </header>
 
-    <section id="hero-story-section" class="relative">
-        <div class="hero-sticky-container">
+<section id="hero-story-section" class="relative">
+        <!-- Added Tailwind flex-col and min-h-screen classes here -->
+        <div class="hero-sticky-container flex flex-col min-h-screen justify-center py-20">
             <div class="absolute inset-0 bg-black/40 lg:bg-black/30 pointer-events-none"></div>
             
             <div id="hero-tagline" class="flex items-end px-6 pb-10 lg:px-12 lg:pb-12 text-white z-10">
-                <div class="max-w-3xl mt-auto">
+                <div class="max-w-3xl">
                     <p class="uppercase tracking-widest text-sm mb-4 opacity-80">Introducing</p>
                     <h2 class="text-3xl md:text-6xl lg:text-6xl font-playfair font-light leading-tight">
                         Your Work-Wellness <br>
@@ -131,7 +132,7 @@
                 </div>
             </div>
 
-            <div id="hero-details" class="flex items-center text-white z-10">
+            <div id="hero-details" class="flex items-center text-white z-10 w-full">
                 <div class="container mx-auto px-6">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         
