@@ -48,7 +48,7 @@
             overflow: visible;
         }
         /* Ensure text blocks stack vertically on mobile */
-        #hero-tagline, #hero-details {
+        #hero-tagline, #hero-why, #hero-research {
             position: relative;
             height: auto;
             opacity: 1; /* Force visible on mobile */
@@ -59,7 +59,7 @@
         /* DESKTOP ONLY (min-width: 1024px): Enable the fancy Scrollytelling */
         @media (min-width: 1024px) {
             #hero-story-section {
-                height: 300vh; /* Tall track for scrolling */
+                height: 400vh; /* Tall track for scrolling through 3 scenes */
                 padding-top: 0;
                 padding-bottom: 0;
             }
@@ -70,7 +70,7 @@
                 top: 0;
                 overflow: hidden;
             }
-            #hero-tagline, #hero-details {
+            #hero-tagline, #hero-why, #hero-research {
                 position: absolute; /* Overlap them for the fade effect */
                 top: 0;
                 left: 0;
@@ -78,8 +78,8 @@
                 height: 100%;
                 margin-bottom: 0;
             }
-            /* Start details invisible on desktop so they can fade in */
-            #hero-details {
+            /* Start the later scenes invisible on desktop so they can fade in one at a time */
+            #hero-why, #hero-research {
                 opacity: 0;
             }
         }
@@ -132,56 +132,31 @@
                 </div>
             </div>
 
-            <div id="hero-details" class="flex items-center text-white z-10 w-full">
+            <div id="hero-why" class="flex items-center text-white z-10 w-full">
                 <div class="container mx-auto px-6">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        
-                        <div class="order-2 lg:order-1">
-                            <p class="uppercase tracking-widest text-sm mb-6 opacity-80">Why Postura</p>
-                            <h2 class="text-4xl lg:text-6xl font-playfair font-light leading-tight mb-8">
-                                The Science Of Sitting
-                            </h2>
-                            <p class="text-lg lg:text-xl font-inter leading-relaxed opacity-90 mb-6">
-                                Years of unhealthy sitting habits can cause permanent changes in the muscles and tissues of the lower-back. 
-                            </p>
-                            <p class="text-lg lg:text-xl font-inter leading-relaxed opacity-90">
-                                But sometimes, simply sitting on a cushion can make all the difference.
-                            </p>
-                        </div>
+                    <div class="max-w-2xl">
+                        <p class="uppercase tracking-widest text-sm mb-6 opacity-80">Why Postura</p>
+                        <h2 class="text-4xl lg:text-6xl font-playfair font-light leading-tight mb-8">
+                            The Science Of Sitting
+                        </h2>
+                        <p class="text-lg lg:text-xl font-inter leading-relaxed opacity-90 mb-6">
+                            Years of unhealthy sitting habits can cause permanent changes in the muscles and tissues of the lower-back.
+                        </p>
+                        <p class="text-lg lg:text-xl font-inter leading-relaxed opacity-90">
+                            This leads to leading to musculoskeletal disorders which passive furnitures do not fix.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="order-1 lg:order-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8">
-                            <div class="flex items-center space-x-4 mb-8">
-                                <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-check text-white"></i>
-                                </div>
-                                <p class="uppercase tracking-widest text-sm font-semibold opacity-90">Advantages of Postura</p>
-                            </div>
-                            
-                            <div class="space-y-6">
-                                <div class="flex items-start space-x-4">
-                                    <i class="fas fa-rocket text-[#8dd9cc] mt-1"></i>
-                                    <div>
-                                        <h4 class="font-bold mb-1">Increase productivity</h4>
-                                        <p class="text-sm opacity-80">Sit and work comfortably for hours.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start space-x-4">
-                                    <i class="fas fa-lungs text-[#8dd9cc] mt-1"></i>
-                                    <div>
-                                        <h4 class="font-bold mb-1">Breathe freely</h4>
-                                        <p class="text-sm opacity-80">Enable deeper, efficient breaths.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start space-x-4">
-                                    <i class="fas fa-shield-alt text-[#8dd9cc] mt-1"></i>
-                                    <div>
-                                        <h4 class="font-bold mb-1">Strengthen muscles</h4>
-                                        <p class="text-sm opacity-80">Hold yourself upright naturally.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+            <div id="hero-research" class="flex items-center text-white z-10 w-full">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-2xl">
+                        <p class="uppercase tracking-widest text-sm mb-6 opacity-80">Research Shows</p>
+                        <span class="font-inter text-7xl lg:text-8xl font-semibold tracking-tight leading-none block mb-6">80%</span>
+                        <p class="text-lg lg:text-xl font-inter leading-relaxed opacity-90">
+                            Reduction in musculoskeletal disorders comes from active behavioral interventions — solutions that prompt frequent movement and target static sitting.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -364,7 +339,10 @@
         let mm = gsap.matchMedia();
 
         mm.add("(min-width: 1024px)", () => {
-            
+
+            // Later scenes start slightly lower so they rise into place as they fade in
+            gsap.set(["#hero-why", "#hero-research"], { y: 40 });
+
             // Create the Hero Scrollytelling Timeline
             const heroTimeline = gsap.timeline({
                 scrollTrigger: {
@@ -376,10 +354,18 @@
                 }
             });
 
-            // Desktop Animation: Fade out tagline, Fade in Details
+            // Desktop Animation: tagline -> "Why Postura" -> "Research Shows", one scene at a time
             heroTimeline
-                .to("#hero-tagline", { opacity: 0, y: -50, duration: 1 })
-                .to("#hero-details", { opacity: 1, duration: 1 }, "-=0.5");
+                // Scene 1 -> 2: fade/rise out tagline, fade/rise in "Why Postura"
+                .to("#hero-tagline", { opacity: 0, y: -40, duration: 1 })
+                .to("#hero-why", { opacity: 1, y: 0, duration: 1 }, "-=0.5")
+                // Hold on "Why Postura" for a full scroll beat before advancing
+                .to({}, { duration: 1.2 })
+                // Scene 2 -> 3: fade/rise out "Why Postura", fade/rise in "Research Shows"
+                .to("#hero-why", { opacity: 0, y: -40, duration: 1 })
+                .to("#hero-research", { opacity: 1, y: 0, duration: 1 }, "-=0.5")
+                // Hold on "Research Shows" before releasing the pin into the next section
+                .to({}, { duration: 0.8 });
         });
 
         // 3. General Fade-In Animations (Run on all devices)
