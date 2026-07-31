@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postura for Business - Enterprise Ergonomics</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* All the same styles from your main page for consistency */
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background-image: url('images/Product2.jpeg'); /* Same background */
+            background-size: cover;
+            background-position: center;
+            filter: blur(4px);
+        }
+
+        header {
+            position: fixed;
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+            background-color: rgba(10, 10, 10, 0.32);
+            backdrop-filter: blur(6px);
+        }
+        .header-scrolled {
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="fixed top-0 left-0 w-full z-20">
+        <nav class="container mx-auto flex items-center justify-between px-6 py-4">
+            <a href="index.html" class="flex items-center space-x-2 z-50">
+                <img src="images/0 (1).jpg" alt="Postura Logo" class="h-8 w-auto">
+                <span class="text-2xl font-bold text-white">Postura</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#hero-story-section" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">Why Postura</a>
+                <a href="features.html" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">How it Works</a>
+                <a href="team.html" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">Team</a>
+                <a href="business.html" class="text-white font-semibold hover:text-[#8dd9cc] transition-colors">For Business</a>
+                <a href="index.html#contact" class="bg-white text-gray-800 px-6 py-2 rounded-full font-semibold hover:bg-[#8dd9cc] hover:text-white transition-all duration-300">Contact Us</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white text-2xl z-50">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-screen bg-gray-900 z-[60] pt-32 transition-all duration-300">
+            <div class="flex flex-col items-center space-y-10 p-6">
+                <a href="index.html#hero-story-section" class="text-white text-3xl font-light hover:text-[#8dd9cc]" onclick="toggleMenu()">Why Postura</a>
+                <a href="features.html" class="text-white text-3xl font-light hover:text-[#8dd9cc]" onclick="toggleMenu()">How it Works</a>
+                <a href="team.html" class="text-white text-3xl font-light hover:text-[#8dd9cc]" onclick="toggleMenu()">Team</a>
+                <a href="business.html" class="text-white text-3xl font-light hover:text-[#8dd9cc]" onclick="toggleMenu()">For Business</a>
+                <a href="index.html#contact" class="bg-white text-gray-900 px-10 py-4 rounded-full text-xl font-bold mt-4" onclick="toggleMenu()">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero / Overview -->
+        <section id="overview" class="relative min-h-screen flex items-center bg-black/50 text-white pt-28">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <p class="uppercase tracking-widest text-sm mb-6 opacity-80">Postura for Business</p>
+                        <h1 class="text-5xl lg:text-6xl font-playfair font-light leading-tight mb-8">
+                            Ergonomics You Can Finally Measure
+                        </h1>
+                        <p class="text-xl font-inter leading-relaxed opacity-90 mb-6">
+                            Musculoskeletal disorders are one of the most preventable — and most expensive — line items in workplace health. Postura helps employers reduce the onset of MSD claims before they happen, turning a fixed cost into a measurable, manageable one.
+                        </p>
+                        <p class="text-xl font-inter leading-relaxed opacity-90 mb-10">
+                            Beyond the cushion itself, Postura tracks how well your existing ergonomic investments — chairs, desks, sit-stand setups — are actually being used. Every alert we send and every session we log rolls up into a real-time view of whether employee wellness is trending up, so you're no longer guessing.
+                        </p>
+                        <!-- TODO: replace with the Google Form link for enterprise demo requests -->
+                        <a href="https://forms.gle/YFeLMUzcVYZ8BLAcA" target="_blank" class="inline-block bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-[#8dd9cc] hover:text-white transition transform hover:scale-105">
+                            Request a Demo
+                        </a>
+                    </div>
+                    <div>
+                        <img src="images/Product7.jpg" alt="An employee using Postura at a professional office desk" class="rounded-3xl shadow-xl w-full" style="max-width:100%;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Pillars -->
+        <section id="pillars" class="relative py-20 lg:py-24 bg-black/60 text-white backdrop-blur-sm">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto mb-16 text-center">
+                    <p class="uppercase tracking-widest text-sm mb-4 opacity-80">Why Enterprise Teams Choose Postura</p>
+                    <h2 class="text-4xl lg:text-5xl font-playfair font-light leading-tight mb-6">
+                        Built to Prove Its Own ROI
+                    </h2>
+                    <p class="text-xl opacity-90 font-light">
+                        Three ways Postura turns workplace wellness from a guess into a metric.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <div class="bg-white/5 hover:bg-white/10 p-6 rounded-3xl transition border border-white/5 hover:border-white/20 group">
+                        <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-shield-alt text-white"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Reduce MSD Claims</h4>
+                        <p class="text-sm opacity-70">Proactive posture correction targets the root cause of musculoskeletal disorders, lowering the claims and workers' comp costs that come from prolonged, unaddressed static sitting.</p>
+                    </div>
+                    <div class="bg-white/5 hover:bg-white/10 p-6 rounded-3xl transition border border-white/5 hover:border-white/20 group">
+                        <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chair text-white"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Measure Existing Ergonomics</h4>
+                        <p class="text-sm opacity-70">See whether the chairs, desks, and equipment you've already invested in are actually improving posture day to day — not just sitting in the room unused.</p>
+                    </div>
+                    <div class="bg-white/5 hover:bg-white/10 p-6 rounded-3xl transition border border-white/5 hover:border-white/20 group">
+                        <div class="w-12 h-12 bg-[#8dd9cc] rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chart-line text-white"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Real-Time Wellness Visibility</h4>
+                        <p class="text-sm opacity-70">Alerts nudge employees in the moment, while every session is logged to history — giving you a live, longitudinal view of whether wellness is actually trending up.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="relative py-20 lg:py-24 bg-black/50 text-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto mb-16 text-center">
+                    <p class="uppercase tracking-widest text-sm mb-4 opacity-80">What Leaders Are Saying</p>
+                    <h2 class="text-4xl lg:text-5xl font-playfair font-light leading-tight">
+                        The Industry Sees the Same Gap
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 flex flex-col">
+                        <i class="fas fa-quote-left text-2xl text-[#8dd9cc] mb-6"></i>
+                        <p class="font-inter leading-relaxed opacity-90 mb-8 flex-grow">
+                            "Although our mandatory ergonomic training is helpful, a deeper behavioural change is required to improve back health awareness and see results."
+                        </p>
+                        <div>
+                            <h4 class="font-bold">Erika Jackson</h4>
+                            <p class="text-sm opacity-70">Director, UC Davis Finance &amp; Op</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 flex flex-col">
+                        <i class="fas fa-quote-left text-2xl text-[#8dd9cc] mb-6"></i>
+                        <p class="font-inter leading-relaxed opacity-90 mb-8 flex-grow">
+                            "I need to see data first, but I do believe that current ergonomic solutions do not drive impact and are becoming a fiscal burden on companies"
+                        </p>
+                        <div>
+                            <h4 class="font-bold">Monica Cepak</h4>
+                            <p class="text-sm opacity-70">CEO, Wisp</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 flex flex-col">
+                        <i class="fas fa-quote-left text-2xl text-[#8dd9cc] mb-6"></i>
+                        <p class="font-inter leading-relaxed opacity-90 mb-8 flex-grow">
+                            "Most ergonomic furnitures are passive solutions. Users need to adapt to the product and there is no incentive for deeper behavioural change, which is driving indirect costs up"
+                        </p>
+                        <div>
+                            <h4 class="font-bold">Hamid Fanooni</h4>
+                            <p class="text-sm opacity-70">Manager, UCD Ergonomics Program</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing CTA -->
+        <section class="relative py-20 bg-black/60 text-white text-center">
+            <div class="container mx-auto px-6">
+                <h3 class="font-playfair text-4xl mb-6">Ready to make ergonomics measurable?</h3>
+                <p class="text-lg opacity-80 max-w-xl mx-auto mb-8">
+                    See how Postura can help your team reduce MSD claims and track wellness in real time.
+                </p>
+                <!-- TODO: replace with the Google Form link for enterprise demo requests -->
+                <a href="REPLACE_WITH_GOOGLE_FORM_LINK" target="_blank" class="inline-block bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-[#8dd9cc] hover:text-white transition transform hover:scale-105">
+                    Request a Demo
+                </a>
+            </div>
+        </section>
+
+        <footer class="relative py-10 opacity-80 flex flex-col items-center space-y-4">
+            <a href="#">
+                <img src="images/0 (1).jpg" alt="Postura Logo" class="h-8 w-auto" style="max-width:100%;height:auto;">
+            </a>
+            <p class="font-inter text-white">Better posture, healthier lifestyle.</p>
+        </footer>
+    </main>
+
+    <a href="index.html" id="homeButton"
+        class="fixed bottom-6 right-6 border-2 border-[#8dd9cc] text-white w-12 h-12 rounded-full shadow-lg hover:bg-[#8dd9cc] hover:text-blue-500 transition duration-300 flex items-center justify-center">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuToggle.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        menuToggle.addEventListener('click', toggleMenu);
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Header scroll effect
+        ScrollTrigger.create({
+            start: 'top -80',
+            end: 99999,
+            toggleClass: {
+                className: 'header-scrolled',
+                targets: 'header'
+            }
+        });
+
+        // Cinematic transitions for all sections
+        const contentSections = gsap.utils.toArray("section");
+        let mm = gsap.matchMedia();
+
+        // Desktop: full scrubbed cinematic reveal
+        mm.add("(min-width: 1024px)", () => {
+            contentSections.forEach((section) => {
+                const content = section.querySelector(".container");
+                if (content) {
+                    gsap.from(content, {
+                        y: 100,
+                        opacity: 0,
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 80%",
+                            end: "bottom 90%",
+                            scrub: 1.5,
+                        }
+                    });
+                }
+            });
+        });
+
+        // Mobile: lighter one-shot fade-up so it stays smooth on touch scroll
+        mm.add("(max-width: 1023px)", () => {
+            contentSections.forEach((section) => {
+                const content = section.querySelector(".container");
+                if (content) {
+                    gsap.from(content, {
+                        y: 40,
+                        opacity: 0,
+                        duration: 0.7,
+                        ease: "power1.out",
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 85%",
+                            toggleActions: "play none none reverse",
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
